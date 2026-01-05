@@ -113,6 +113,12 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
+# Frontend assets (para producción)
+STATICFILES_DIRS = []
+FRONTEND_DIR = BASE_DIR.parent / 'frontend' / 'dist' / 'assets'
+if FRONTEND_DIR.exists():
+    STATICFILES_DIRS.append(('assets', FRONTEND_DIR))
+
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
