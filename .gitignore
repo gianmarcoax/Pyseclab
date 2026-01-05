@@ -16,7 +16,6 @@ media/
 
 # Node
 node_modules/
-dist/
 .cache/
 
 # IDE
