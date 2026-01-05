@@ -1,0 +1,18 @@
+# Core Django
+Django==5.0.1
+djangorestframework==3.14.0
+djangorestframework-simplejwt==5.3.1
+django-cors-headers==4.3.1
+
+# Cryptography
+cryptography==41.0.7
+
+# Security
+bcrypt==4.1.2
+python-dotenv==1.0.0
+
+# Database (production - uncomment for PostgreSQL)
+# psycopg2-binary==2.9.9
+
+# WSGI Server (production)
+gunicorn==21.2.0
