@@ -152,8 +152,16 @@ SIMPLE_JWT = {
 
 
 # CORS Settings (for frontend)
-CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ORIGINS', 'http://localhost:5173,http://127.0.0.1:5173').split(',')
-CORS_ALLOW_ALL_ORIGINS = DEBUG  # Solo en desarrollo
+CORS_ALLOWED_ORIGINS = [
+    'https://pyseclab.vercel.app',
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+]
+# Agregar orígenes adicionales desde variable de entorno
+extra_origins = os.environ.get('CORS_ORIGINS', '')
+if extra_origins:
+    CORS_ALLOWED_ORIGINS.extend(extra_origins.split(','))
+CORS_ALLOW_CREDENTIALS = True
 
 
 # Security Settings (enable in production)
