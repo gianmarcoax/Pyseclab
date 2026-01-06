@@ -18,6 +18,7 @@ from .serializers import (
 class CustomTokenObtainPairView(TokenObtainPairView):
     """Vista de login con JWT personalizado."""
     serializer_class = CustomTokenObtainPairSerializer
+    permission_classes = [AllowAny]
 
 
 @api_view(['POST'])
