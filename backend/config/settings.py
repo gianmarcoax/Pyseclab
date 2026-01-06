@@ -161,7 +161,28 @@ CORS_ALLOWED_ORIGINS = [
 extra_origins = os.environ.get('CORS_ORIGINS', '')
 if extra_origins:
     CORS_ALLOWED_ORIGINS.extend(extra_origins.split(','))
+
 CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+CORS_PREFLIGHT_MAX_AGE = 86400
 
 
 # Security Settings (enable in production)
